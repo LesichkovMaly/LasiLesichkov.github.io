@@ -11,14 +11,11 @@ module.exports = {
         {
             errormsg = 'You should be logged!';
         }
-        else if(!articleArgs.title)
+        else if(!articleArgs.title || !articleArgs.content)
         {
             errormsg = 'Error: No title given';
         }
-        else if(!articleArgs.content)
-        {
-            errormsg = 'Error: No story shared';
-        }
+       
         if(errormsg)
         {
             res.render ('article/create', {error:errormsg});
